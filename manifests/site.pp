@@ -4,7 +4,8 @@ node default{
     content => 'Hello, World!',
   }
   class{'dev_user':
-    pswd => '$1$82O96PFM$8avkFBH/CitHmrE9rEtjb1'
+    pswd => '$1$82O96PFM$8avkFBH/CitHmrE9rEtjb1',
+    grps => ['puppet']
   }
   include dev_editor
 }
