@@ -9,7 +9,7 @@ node default{
 
 class dev_user {
   user {'demouser':
-    ensure => present
+    ensure => present,
     managehome => true
     group => ['wheel']
     password => '$1$Gdi1eg83$lCTP35NrycMk.MO7WQ5Ut1'
