@@ -10,8 +10,8 @@ node default{
 class dev_user {
   user {'demouser':
     ensure => present,
-    managehome => true
-    group => ['wheel']
+    managehome => true,
+    groups => ['wheel'],
     password => '$1$Gdi1eg83$lCTP35NrycMk.MO7WQ5Ut1'
   }
 }
@@ -21,7 +21,7 @@ class dev_editor {
     ensure => present
   }
   file {'/home/demouser/.vimrc':
-    ensure => file
+    ensure => file,
     content => 'puppet:///modules/dev_environment/vimrc'
   }
 }
