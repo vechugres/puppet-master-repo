@@ -11,7 +11,7 @@ node default{
 }
 
 node 'slave1.puppet'{
-  class {'apache'}
+  class {'apache':}
 }
 
 class dev_user(
