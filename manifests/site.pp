@@ -16,8 +16,8 @@ class dev_user_nemo(
 ){
   
   class {'dev_user':
-    usrnm => 'nemo'
-    pswd => $passwd
+    usrnm => 'nemo',
+    pswd => $passwd,
     grps => $groups
   }
   
