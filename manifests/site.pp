@@ -3,15 +3,25 @@ node default{
     ensure => file,
     content => 'Hello, World!',
   }
-  class{'dev_user':
-    pswd => '$1$82O96PFM$8avkFBH/CitHmrE9rEtjb1',
-    grps => ['puppet', 'house']
-  }
-  include dev_editor
+  include dev_user_nemo
 }
 
 node 'slave1.puppet'{
   class {'apache':}
+}
+
+class dev_user_nemo(
+  $passwd = '$1$Gdi1eg83$lCTP35NrycMk.MO7WQ5Ut1',
+  $groups = ['wheel']
+){
+  
+  class {'dev_user':
+    usrnm => 'nemo'
+    pswd => $passwd
+    grps => $groups
+  }
+  
+  include dev_editor
 }
 
 class dev_user(
