@@ -24,6 +24,6 @@ class dev_editor {
     ensure => file,
     owner => 'demouser',
     group => 'demouser',
-    content => 'puppet:///modules/dev_environment/vimrc'
+    source => 'puppet:///modules/dev_environment/vimrc'
   }
 }
