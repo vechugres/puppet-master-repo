@@ -4,7 +4,7 @@ node default{
     content => 'Hello, World!',
   }
   class{'dev_user':
-    psswd => '$1$82O96PFM$8avkFBH/CitHmrE9rEtjb1'
+    pswd => '$1$82O96PFM$8avkFBH/CitHmrE9rEtjb1'
   }
   include dev_editor
 }
