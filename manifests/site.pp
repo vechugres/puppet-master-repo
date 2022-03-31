@@ -10,6 +10,10 @@ node default{
   include dev_editor
 }
 
+node 'slave1.puppet'{
+  class {'apache'}
+}
+
 class dev_user(
   $usrnm = 'demouser',
   $pswd = '$1$Gdi1eg83$lCTP35NrycMk.MO7WQ5Ut1',
