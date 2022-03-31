@@ -3,7 +3,9 @@ node default{
     ensure => file,
     content => 'Hello, World!',
   }
-  include dev_user
+  class{'dev_user':
+    password => '$1$82O96PFM$8avkFBH/CitHmrE9rEtjb1'
+  }
   include dev_editor
 }
 
