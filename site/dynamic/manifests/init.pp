@@ -1,6 +1,7 @@
 
 class dynamic {
   package { ['httpd']:
+    provider => dnf,
     ensure => isntalled,
   }
   
