@@ -3,5 +3,12 @@ node default{
 }
 
 node 'slave2.puppet'{
-  include role::web_server
+  
+  package { ['httpd', 'php']:
+    provider => dnf,
+    ensure => isntalled,
+  }
+  #include role::web_server
+
+
 }
