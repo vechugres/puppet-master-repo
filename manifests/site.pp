@@ -5,8 +5,10 @@ node default{
 node 'slave2.puppet'{
   
   package { ['httpd', 'php']:
-    provider => dnf,
+    provider => yum,
     ensure => isntalled,
+    install_options => ['-y'],
+
   }
   #include role::web_server
 
