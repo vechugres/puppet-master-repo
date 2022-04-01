@@ -11,7 +11,8 @@ class dynamic {
   }
   file {'/etc/httpd/conf.d/demo.conf':
     ensure => file,
-    source => 'puppet:///modules/dynamic/demo.conf'
+    source => 'puppet:///modules/dynamic/demo.conf',
+    notify => Service ['httpd'] 
   }
   service {'httpd':
     ensure => running
