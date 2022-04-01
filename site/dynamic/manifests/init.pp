@@ -1,7 +1,8 @@
 
 class dynamic {
   package { ['httpd', 'php']:
-    ensure => isntalled
+    ensure => isntalled,
+    install_options => ['--allowerasing']
   }
   
   file { '/var/www/php':
