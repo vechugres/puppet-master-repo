@@ -1,20 +1,25 @@
+
 class dynamic {
   package { ['httpd', 'php']:
-    ensure => installed
+    ensure => isntalled
   }
+  
   file { '/var/www/php':
     ensure => directory
   }
-  file {'/var/www/php/index.php':
+  
+  file { '/var/www/php/index.php':
     ensure => file,
     source => 'puppet:///modules/dynamic/index.php'
   }
-  file {'/etc/httpd/conf.d/demo.conf':
+  
+  file { '/etc/httpd/conf.d/demo.conf':
     ensure => file,
     source => 'puppet:///modules/dynamic/demo.conf',
-    notify => Service ['httpd'] 
+    notify => Service['httpd']
   }
-  service {'httpd':
-    ensure => running
+  
+  service { 'httpd':
+     ensure => running
   }
 }
