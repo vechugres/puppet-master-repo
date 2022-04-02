@@ -4,11 +4,8 @@ node default{
    content => 'Hello, World!',
  }
  
- class {'dev_user':
-   pswd => '$1$e/DwQs6J$0FSL8mFOMcBHktW84qlkN0',
-   grps => ['house']
- }
- include dev_editor
+ include dev_user_nemo 
+
 } 
 
 class dev_user_nemo (
@@ -21,7 +18,7 @@ class dev_user_nemo (
     grps =>  $grps
   }
   
-  indclue dev_editor
+  include dev_editor
 }
 
 
