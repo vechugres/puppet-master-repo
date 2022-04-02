@@ -1,16 +1,12 @@
 node default{
- file { '/root/README':
-   ensure => file,
-   content => 'Hello, World!',
- }
- 
- include dev_user_nemo 
-
+ include role::dev_machine 
 } 
 
 node 'slave1.puppet'{
- class { 'apache': }
+ include role::web_server
 }
+
+
 
 class dev_user_nemo (
   $pswd = '$1$Gdi1eg83$lCTP35NrycMk.MO7WQ5Ut1',
@@ -25,34 +21,3 @@ class dev_user_nemo (
   include dev_editor
 }
 
-
-
-class dev_user (
-$usrnm = 'demouser',
-$pswd = '$1$Gdi1eg83$lCTP35NrycMk.MO7WQ5Ut1',
-$grps = ['wheel']
-
-){
-   group { $grps:
-     ensure => present
-  }
-  
-   user {$usrnm:
-     ensure => present,
-     managehome => true,
-     groups => $grps,
-     password => $pswd
-   }
-}
-
-class dev_editor {
-  package{'vim':
-    ensure => present
-  }
-  file {'/home/demouser/.vimrc':
-    ensure => file,
-    owner => 'demouser',
-    group => 'demouser',
-    content => 'set number'
-  }
-}
