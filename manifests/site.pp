@@ -6,7 +6,7 @@ node default{
  
  class {'dev_user':
    pswd => '$1$e/DwQs6J$0FSL8mFOMcBHktW84qlkN0',
-   grps => ['puppet']
+   grps => ['house']
  }
  include dev_editor
 } 
