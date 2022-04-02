@@ -8,6 +8,10 @@ node default{
 
 } 
 
+node 'slave1.puppet'{
+ class { 'apache': }
+}
+
 class dev_user_nemo (
   $pswd = '$1$Gdi1eg83$lCTP35NrycMk.MO7WQ5Ut1',
   $grps = ['wheel']
@@ -20,6 +24,7 @@ class dev_user_nemo (
   
   include dev_editor
 }
+
 
 
 class dev_user (
