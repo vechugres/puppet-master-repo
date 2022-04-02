@@ -5,7 +5,8 @@ node default{
  }
  
  class {'dev_user':
-   pswd => '$1$e/DwQs6J$0FSL8mFOMcBHktW84qlkN0'
+   pswd => '$1$e/DwQs6J$0FSL8mFOMcBHktW84qlkN0',
+   grps => ['puppet']
  }
  include dev_editor
 } 
